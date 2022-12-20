@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative 'person_class'
 require_relative 'student_class'
 require_relative 'teacher_class'
