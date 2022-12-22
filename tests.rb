@@ -6,7 +6,6 @@ require_relative './nameable/trimmer_decorator'
 require_relative 'classroom_class'
 require_relative 'book_class'
 
-
 # Create a new Person and see if they can use services
 franz = Person.new(20, 'Franz', parent_permission: false)
 puts franz.name
@@ -41,7 +40,7 @@ puts
 
 geography_classroom = Classroom.new('Geography')
 sam_student = Student.new(14, 'Sam', geography_classroom)
-black_house_book = Book.new("Black House", "Stephen King")
+black_house_book = Book.new('Black House', 'Stephen King')
 black_house_book.add_rental(sam_student, '2022-10-10')
 puts sam_student.name
 puts sam_student.classroom.label
