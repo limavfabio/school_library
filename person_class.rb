@@ -18,6 +18,10 @@ class Person < Nameable
     @age >= 18
   end
 
+  def add_rental(book, date)
+    Rental.new(self, book, date)
+  end
+
   public
 
   def can_use_services?
