@@ -1,10 +1,10 @@
-require_relative 'person_class'
-require_relative 'student_class'
-require_relative 'teacher_class'
-require_relative './nameable/capitalize_decorator'
-require_relative './nameable/trimmer_decorator'
-require_relative 'classroom_class'
-require_relative 'book_class'
+require_relative './src/person_class'
+require_relative './src/student_class'
+require_relative './src/teacher_class'
+require_relative './src/nameable/capitalize_decorator'
+require_relative './src/nameable/trimmer_decorator'
+require_relative './src/classroom_class'
+require_relative './src/book_class'
 
 # Create a new Person and see if they can use services
 franz = Person.new(20, 'Franz', parent_permission: false)
