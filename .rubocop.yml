@@ -10,7 +10,7 @@ AllCops:
 Layout/LineLength:
   Max: 120
 Metrics/MethodLength:
-  Max: 20
+  Max: 52
 Metrics/AbcSize:
   Max: 50
 Metrics/ClassLength:
@@ -25,6 +25,8 @@ Style/ClassAndModuleChildren:
   Enabled: false
 Style/EachForSimpleLoop:
   Enabled: false
+Style/GlobalVars:
+  Enabled: false
 Style/AndOr:
   Enabled: false
 Style/DefWithParentheses:
@@ -32,6 +34,8 @@ Style/DefWithParentheses:
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
 
+Metrics/CyclomaticComplexity:
+  Max: 8
 Layout/HashAlignment:
   EnforcedColonStyle: key
 Layout/ExtraSpacing:
@@ -48,4 +52,6 @@ Style/HashEachMethods:
 Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
+  Enabled: false
+Lint/NestedMethodDefinition:
   Enabled: false
