@@ -7,20 +7,22 @@ require './src/nameable/capitalize_decorator'
 require './src/nameable/trimmer_decorator'
 
 class App
-  $people_list = []
-  $books_list = []
-  $rentals_list = []
+  def initialize
+    @people_list = []
+    @books_list = []
+    @rentals_list = []
+  end
 
   def list_all_books
     puts 'List all books'
-    $books_list.each do |book|
+    @books_list.each do |book|
       puts "Title: #{book.title}, Author: #{book.author}"
     end
   end
 
   def list_all_people
     puts 'List all people'
-    $people_list.each do |person|
+    @people_list.each do |person|
       puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
   end
@@ -30,11 +32,23 @@ class App
     sub_option = gets.chomp.to_i
     case sub_option
     when 1
-      student = Student.new(age: gets.chomp.to_i, name: gets.chomp, id: nil, parent_permission: gets.chomp.downcase == 'y')
+      print 'Age: '
+      age = gets.chomp.to_i
+      print 'Name: '
+      name = gets.chomp
+      print 'Has parent permission? [Y/N]'
+      parent_permission = gets.chomp.downcase == 'y'
+      student = Student.new(age, name, nil, permission: parent_permission)
       @people_list << student
       puts 'Person created successfully'
     when 2
-      teacher = Teacher.new(age: gets.chomp.to_i, specialization: gets.chomp, name: gets.chomp)
+      print 'Age: '
+      age = gets.chomp.to_i
+      print 'Name: '
+      name = gets.chomp
+      print 'Specialization: '
+      specialization = gets.chomp
+      teacher = Teacher.new(age, specialization, name)
       @people_list << teacher
       puts 'Person created successfully'
     else
@@ -49,30 +63,30 @@ class App
     print 'Author: '
     author = gets.chomp
     book = Book.new(title, author)
-    $books_list << book
+    @books_list << book
     puts 'Book created successfully'
   end
 
   def create_rental
     puts 'Choose a book from the following list by number'
-    $books_list.each_with_index do |book, index|
+    @books_list.each_with_index do |book, index|
       puts "#{index + 1}) Title: #{book.title}, Author: #{book.author}"
     end
     print 'Book number: '
     book_number = gets.chomp.to_i - 1
     puts 'Choose a person from the following list by number'
-    $people_list.each_with_index do |person, index|
+    @people_list.each_with_index do |person, index|
       puts "#{index + 1}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
     print 'Person number: '
     person_number = gets.chomp.to_i - 1
     print 'Date: '
     date = gets.chomp
-    book = $books_list.at(book_number)
-    person = $people_list.at(person_number)
+    book = @books_list.at(book_number)
+    person = @people_list.at(person_number)
     book.add_rental(person, date)
     rental = Rental.new(person, book, date)
-    $rentals_list << rental
+    @rentals_list << rental
     puts 'Rental created successfully'
   end
 
@@ -80,7 +94,7 @@ class App
     print 'ID of person: '
     id = gets.chomp.to_i
     puts 'Rentals:'
-    $rentals_list.each do |rental|
+    @rentals_list.each do |rental|
       if rental.person.id == id
         puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}, Person: #{rental.person.name}"
       end
