@@ -30,25 +30,12 @@ class App
     sub_option = gets.chomp.to_i
     case sub_option
     when 1
-      print 'Age: '
-      age = gets.chomp.to_i
-      print 'Name: '
-      name = gets.chomp
-      print 'Has parent permission? [Y/N]'
-      permission = gets.chomp
-      permission = permission.downcase == 'y'
-      student = Student.new(age, name, nil, permission)
-      $people_list << student
+      student = Student.new(age: gets.chomp.to_i, name: gets.chomp, id: nil, parent_permission: gets.chomp.downcase == 'y')
+      @people_list << student
       puts 'Person created successfully'
     when 2
-      print 'Age: '
-      age = gets.chomp.to_i
-      print 'Name: '
-      name = gets.chomp
-      print 'Specialization: '
-      specialization = gets.chomp
-      teacher = Teacher.new(age, specialization, name)
-      $people_list << teacher
+      teacher = Teacher.new(age: gets.chomp.to_i, specialization: gets.chomp, name: gets.chomp)
+      @people_list << teacher
       puts 'Person created successfully'
     else
       puts 'Invalid option'
