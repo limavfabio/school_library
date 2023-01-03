@@ -11,10 +11,7 @@ require './src/manage_persistance'
 class App
   def initialize
     @people_list = []
-    # command supposed to read from file
-    # after solving the problem with the JSON file object serialization
-    @books_list = ManagePersistance.new.read_from_file('./DB/books.json')
-    # @books_list = []
+    @books_list = PersistBooks.new.read_from_file || []
     @rentals_list = []
   end
 
@@ -88,6 +85,6 @@ class App
   end
 
   def save_data
-    ManagePersistance.new.write_to_file(@books_list)
+    PersistBooks.new.write_to_file(@books_list)
   end
 end

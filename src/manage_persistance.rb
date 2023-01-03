@@ -1,28 +1,18 @@
 require 'json'
+require './src/persist_books'
 
 class ManagePersistance
-  def book_to_json(book)
-    # serialize to json
-    {
-      title: book.title,
-      author: book.author
-    }
-  end
-
-  def write_to_file(books)
+  def write_data(books)
     # write to file
-    serialized_books = books.map { |book| book_to_json(book) }
-    File.write('./DB/books.json', JSON.pretty_generate(serialized_books))
+    PersistBooks.new.write_to_file(books)
+    # PersistPeople.new.write_to_file...
+    # PersistRentals.new.write_to_file...
   end
 
-  def read_from_file(json)
+  def read_data
     # read from file
-    deserialized_books = JSON.parse(File.read(json))
-    deserialized_books.map { |book| json_to_book(book) }
-  end
-
-  def json_to_book(json)
-    # deserialize from json
-    Book.new(json['title'], json['author'])
+    PersistBooks.new.read_from_file('./DB/books.json')
+    # PersistPeople.new.read_from_file...
+    # PersistRentals.new.read_from_file...
   end
 end
