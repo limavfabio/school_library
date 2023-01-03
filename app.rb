@@ -6,7 +6,7 @@ require './src/book_class'
 require './src/nameable/capitalize_decorator'
 require './src/nameable/trimmer_decorator'
 require './src/manage_rentals'
-require './src/manage_persistance'
+require './src/persist_books'
 
 class App
   def initialize
