@@ -6,10 +6,14 @@ require './src/book_class'
 require './src/nameable/capitalize_decorator'
 require './src/nameable/trimmer_decorator'
 require './src/manage_rentals'
+require './src/manage_persistance'
 
 class App
   def initialize
     @people_list = []
+    # command supposed to read from file
+    # after solving the problem with the JSON file object serialization
+    # @books_list = ManagePersistance.new.read_from_file('./DB/books.json')
     @books_list = []
     @rentals_list = []
   end
@@ -81,5 +85,9 @@ class App
         puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}, Person: #{rental.person.name}"
       end
     end
+  end
+
+  def save_data
+    ManagePersistance.new.write_to_file(@books_list)
   end
 end
