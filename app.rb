@@ -13,8 +13,8 @@ class App
     @people_list = []
     # command supposed to read from file
     # after solving the problem with the JSON file object serialization
-    # @books_list = ManagePersistance.new.read_from_file('./DB/books.json')
-    @books_list = []
+    @books_list = ManagePersistance.new.read_from_file('./DB/books.json')
+    # @books_list = []
     @rentals_list = []
   end
 
