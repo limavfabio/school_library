@@ -6,6 +6,8 @@ module PersistRentals
   SOURCE = './DB/rentals.json'.freeze
 
   def self.read_from_file
+    return [] unless File.exist?(SOURCE)
+
     deserialized_rentals = JSON.parse(File.read(SOURCE))
     deserialized_rentals.map { |rental| json_to_rentals(rental) }
   end

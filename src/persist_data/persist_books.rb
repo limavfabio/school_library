@@ -4,6 +4,8 @@ module PersistBooks
   SOURCE = './DB/books.json'.freeze
 
   def self.read_from_file
+    return [] unless File.exist?(SOURCE)
+
     deserialized_books = JSON.parse(File.read(SOURCE))
     deserialized_books.map { |book| json_to_book(book) }
   end
