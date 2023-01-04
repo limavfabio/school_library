@@ -9,9 +9,11 @@ module PersistPeople
   end
 
   def self.json_to_people(json)
-
+    if json['class'] == 'Student'
       Student.new(json['id'], json['name'], json['age'], true)
-
+    else
+      Teacher.new(json['id'], json['name'], json['age'], true, 'Math')
+    end
   end
 
   def self.write_to_file(people)

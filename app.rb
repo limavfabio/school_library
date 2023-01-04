@@ -54,7 +54,9 @@ class App
       name = gets.chomp
       print 'Specialization: '
       specialization = gets.chomp
-      teacher = Teacher.new(age, specialization, name)
+      id = Random.rand(1..1000)
+      parent_permission = true
+      teacher = Teacher.new(id, name, age, parent_permission, specialization)
       @people_list << teacher
       puts 'Person created successfully'
     else
