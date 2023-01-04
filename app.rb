@@ -15,7 +15,7 @@ class App
   def initialize
     @people_list = PersistPeople.read_from_file || []
     @books_list = PersistBooks.read_from_file || []
-    @rentals_list = []
+    @rentals_list = PersistRentals.read_from_file || []
   end
 
   def list_all_books
@@ -93,5 +93,6 @@ class App
   def save_data
     PersistPeople.write_to_file(@people_list)
     PersistBooks.write_to_file(@books_list)
+    PersistRentals.write_to_file(@rentals_list)
   end
 end
