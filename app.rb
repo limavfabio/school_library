@@ -7,6 +7,9 @@ require './src/nameable/capitalize_decorator'
 require './src/nameable/trimmer_decorator'
 require './src/manage_rentals'
 require './src/persist_data/persist_books'
+require './src/persist_data/persist_people'
+require './src/persist_data/persist_rentals'
+
 
 class App
   def initialize
@@ -25,7 +28,7 @@ class App
   def list_all_people
     puts 'List all people'
     @people_list.each do |person|
-      puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      puts "[#{person.class}] ID: #{person.id}, Name: #{person.name}, Age: #{person.age}"
     end
   end
 
@@ -40,7 +43,8 @@ class App
       name = gets.chomp
       print 'Has parent permission? [Y/N]'
       parent_permission = gets.chomp.downcase == 'y'
-      student = Student.new(age, name, nil, permission: parent_permission)
+      id = Random.rand(1..1000)
+      student = Student.new(id, name, age, parent_permission, nil)
       @people_list << student
       puts 'Person created successfully'
     when 2
@@ -85,6 +89,7 @@ class App
   end
 
   def save_data
+    PersistPeople.write_to_file(@people_list)
     PersistBooks.write_to_file(@books_list)
   end
 end
