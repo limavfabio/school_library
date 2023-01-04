@@ -6,12 +6,15 @@ require './src/book_class'
 require './src/nameable/capitalize_decorator'
 require './src/nameable/trimmer_decorator'
 require './src/manage_rentals'
+require './src/persist_data/persist_books'
+require './src/persist_data/persist_people'
+require './src/persist_data/persist_rentals'
 
 class App
   def initialize
-    @people_list = []
-    @books_list = []
-    @rentals_list = []
+    @people_list = PersistPeople.read_from_file
+    @books_list = PersistBooks.read_from_file
+    @rentals_list = PersistRentals.read_from_file
   end
 
   def list_all_books
@@ -24,7 +27,7 @@ class App
   def list_all_people
     puts 'List all people'
     @people_list.each do |person|
-      puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      puts "[#{person.class}] ID: #{person.id}, Name: #{person.name}, Age: #{person.age}"
     end
   end
 
@@ -39,7 +42,8 @@ class App
       name = gets.chomp
       print 'Has parent permission? [Y/N]'
       parent_permission = gets.chomp.downcase == 'y'
-      student = Student.new(age, name, nil, permission: parent_permission)
+      id = Random.rand(1..1000)
+      student = Student.new(id, name, age, parent_permission, nil)
       @people_list << student
       puts 'Person created successfully'
     when 2
@@ -49,7 +53,9 @@ class App
       name = gets.chomp
       print 'Specialization: '
       specialization = gets.chomp
-      teacher = Teacher.new(age, specialization, name)
+      id = Random.rand(1..1000)
+      parent_permission = true
+      teacher = Teacher.new(id, name, age, parent_permission, specialization)
       @people_list << teacher
       puts 'Person created successfully'
     else
@@ -81,5 +87,11 @@ class App
         puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}, Person: #{rental.person.name}"
       end
     end
+  end
+
+  def save_data
+    PersistPeople.write_to_file(@people_list)
+    PersistBooks.write_to_file(@books_list)
+    PersistRentals.write_to_file(@rentals_list)
   end
 end

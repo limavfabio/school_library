@@ -31,6 +31,7 @@ def run
   when 6
     $app.list_rentals_for_person_id
   when 7
+    $app.save_data
     puts 'Thank you for using this app!'
     return
   else

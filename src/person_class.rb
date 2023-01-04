@@ -2,16 +2,14 @@ require_relative './nameable/nameable_decorator'
 require_relative 'rental_class'
 
 class Person < Nameable
-  attr_reader :id
-  attr_accessor :name, :age, :rentals
+  attr_accessor :name, :age, :rentals, :id
 
-  def initialize(age, name = 'Unknown', rentals = [], parent_permission: true)
+  def initialize(id, name, age, parent_permission: true)
     super()
-    @id = Random.rand(1..1000)
-    @parent_permission = parent_permission
+    @id = id || Random.rand(1..1000)
     @name = name
     @age = age
-    @rentals = rentals
+    @parent_permission = parent_permission
   end
 
   private

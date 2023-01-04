@@ -1,0 +1,54 @@
+[
+  {
+    "person": {
+      "class": "Student",
+      "id": 928,
+      "name": "Fabio",
+      "age": 15
+    },
+    "book": {
+      "title": "titlebook",
+      "author": "Authorbook"
+    },
+    "date": "01/01/2021"
+  },
+  {
+    "person": {
+      "class": "Student",
+      "id": 928,
+      "name": "Fabio",
+      "age": 15
+    },
+    "book": {
+      "title": "titlebook",
+      "author": "Authorbook"
+    },
+    "date": "20/05/2022"
+  },
+  {
+    "person": {
+      "class": "Student",
+      "id": 928,
+      "name": "Fabio",
+      "age": 15
+    },
+    "book": {
+      "title": "titlebook",
+      "author": "Authorbook"
+    },
+    "date": "2/2/2021"
+  },
+  {
+    "person": {
+      "class": "Teacher",
+      "id": 880,
+      "name": "livia",
+      "age": 30
+    },
+    "book": {
+      "title": "titlebook",
+      "author": "Authorbook"
+    },
+    "date": "00/00/0000"
+  }
+]
