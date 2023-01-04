@@ -10,7 +10,6 @@ require './src/persist_data/persist_books'
 require './src/persist_data/persist_people'
 require './src/persist_data/persist_rentals'
 
-
 class App
   def initialize
     @people_list = PersistPeople.read_from_file || []
