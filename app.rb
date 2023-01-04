@@ -13,7 +13,7 @@ require './src/persist_data/persist_rentals'
 
 class App
   def initialize
-    @people_list = []
+    @people_list = PersistPeople.read_from_file || []
     @books_list = PersistBooks.read_from_file || []
     @rentals_list = []
   end

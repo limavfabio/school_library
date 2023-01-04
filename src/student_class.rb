@@ -7,7 +7,6 @@ class Student < Person
     super(id, name, age)
     @classroom = classroom
     @parent_permission = parent_permission
-    classroom&.add_student(self)
   end
 
   def play_hooky
