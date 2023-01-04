@@ -6,12 +6,12 @@ require './src/book_class'
 require './src/nameable/capitalize_decorator'
 require './src/nameable/trimmer_decorator'
 require './src/manage_rentals'
-require './src/persist_books'
+require './src/persist_data/persist_books'
 
 class App
   def initialize
     @people_list = []
-    @books_list = PersistBooks.new.read_from_file || []
+    @books_list = PersistBooks.read_from_file || []
     @rentals_list = []
   end
 
@@ -85,6 +85,6 @@ class App
   end
 
   def save_data
-    PersistBooks.new.write_to_file(@books_list)
+    PersistBooks.write_to_file(@books_list)
   end
 end
