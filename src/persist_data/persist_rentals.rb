@@ -8,9 +8,8 @@ module PersistRentals
     deserialized_rentals.map { |rental| json_to_rentals(rental) }
   end
 
-  def self.json_to_rentals(json)
+  def self.json_to_rentals(_json)
     ManageRentals.new.create_rental(@books_list, @people_list, @rentals_list)
-
   end
 
   def self.write_to_file(rentals)
