@@ -4,6 +4,8 @@ module PersistPeople
   SOURCE = './DB/people.json'.freeze
 
   def self.read_from_file
+    return [] unless File.exist?(SOURCE)
+
     deserialized_people = JSON.parse(File.read(SOURCE))
     deserialized_people.map { |person| json_to_people(person) }
   end
