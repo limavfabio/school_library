@@ -25,7 +25,7 @@ describe 'Decorators' do
   context 'Test CapitalizeDecorator' do
     it 'capitalize the name' do
       nameable = CapitalizeDecorator.new('maximiliano')
-      expect(nameable.correct_name).to eq('Maximiliano')
+      expect(nameable.nameable.capitalize).to eq('Maximiliano')
     end
   end
 end
