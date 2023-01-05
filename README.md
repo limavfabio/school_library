@@ -132,11 +132,11 @@ The project is not yet deployable
 - Twitter: [@limavfabio](https://twitter.com/limavfabio)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/limavfabio)
 
-👤 **Author2**
+👤 **Camilo Vela**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@camilovelag](https://github.com/camilovelag)
+- Twitter: [@camilovelag](https://twitter.com/camilovelag)
+- LinkedIn: [camilovelag](https://linkedin.com/in/camilovelag)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
