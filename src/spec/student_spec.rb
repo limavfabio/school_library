@@ -4,7 +4,7 @@ require_relative '../student_class'
 describe Student do
   let(:student) { Student.new(135, 'John', 15, true, '10A') }
 
-  describe '#initialize' do
+  context '#initialize' do
     it 'sets the id, name, and age inherited from Person' do
       expect(student.id).to eq(135)
       expect(student.name).to eq('John')
@@ -20,7 +20,7 @@ describe Student do
     end
   end
 
-  describe '#play_hooky' do
+  context '#play_hooky' do
     it 'returns a string' do
       expect(student.play_hooky).to be_a(String)
     end

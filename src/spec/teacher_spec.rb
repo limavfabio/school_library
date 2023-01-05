@@ -4,7 +4,7 @@ require_relative '../teacher_class'
 describe Teacher do
   let(:teacher) { Teacher.new(264, 'Jane', 35, true, 'Math') }
 
-  describe '#initialize' do
+  context '#initialize' do
     it 'sets the id, name, and age inherited from Person' do
       expect(teacher.id).to eq(264)
       expect(teacher.name).to eq('Jane')
@@ -16,7 +16,7 @@ describe Teacher do
     end
   end
 
-  describe '#can_use_services?' do
+  context '#can_use_services?' do
     it 'returns true' do
       expect(teacher.can_use_services?).to eq(true)
     end
