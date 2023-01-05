@@ -1,5 +1,7 @@
 <a name="readme-top"></a>
 
+<!-- TABLE OF CONTENTS -->
+
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -19,8 +21,10 @@
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
+- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
+
+<!-- PROJECT DESCRIPTION -->
 
 # 📖 School Library CLI <a name="about-project"></a>
 
@@ -46,23 +50,35 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Use module**
-- **Give you functions from [Enumerable](https://ruby-doc.org/core-3.0.0/Enumerable.html)**
+- **[Create and manage students and teachers information]**
+- **[Keep track of books and rentals]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-Live Demo not yet available
+> Not yet available
+
+<!-- - [Live Demo Link](https://yourdeployedapplicationlink.com) -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
 In order to run this project you need:
 
-```sh
- gem install ruby
+```
+sudo apt install ruby
+gem install json
+gem install rspec
 ```
 
 ### Setup
@@ -70,8 +86,24 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```sh
-  cd my-folder
   git clone https://github.com/limavfabio/school_library.git
+  cd school_library
+```
+
+### Install
+
+Install this project with:
+
+```sh
+  bundler install
+```
+
+### Usage
+
+To run the project, execute the following command:
+
+```sh
+  ruby main.rb
 ```
 
 ### Run tests
@@ -79,12 +111,20 @@ Clone this repository to your desired folder:
 To run tests, run the following command:
 
 ```sh
-  rubocop .
+  rspec src/spec
 ```
+
+### Deployment
+
+The project is not yet deployable
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- AUTHORS -->
+
 ## 👥 Authors <a name="authors"></a>
+
+> Mention all of the collaborators of this project.
 
 👤 **Fábio Lima**
 
@@ -92,7 +132,24 @@ To run tests, run the following command:
 - Twitter: [@limavfabio](https://twitter.com/limavfabio)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/limavfabio)
 
+👤 **Author2**
+
+- GitHub: [@githubhandle](https://github.com/githubhandle)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **[Ability to deploy on the web]**
+- [ ] **[Integration with PostgreSQL]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
@@ -102,17 +159,27 @@ Feel free to check the [issues page](../../issues/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- SUPPORT -->
+
 ## ⭐️ Show your support <a name="support"></a>
 
 If you like this project please leave a star.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- ACKNOWLEDGEMENTS -->
+
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank everyone whose code was used
+I would like to thank everyone whose code was used or served as inspiration.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FAQ (optional) -->
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
