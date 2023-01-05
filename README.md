@@ -76,9 +76,9 @@ To get a local copy up and running, follow these steps.
 In order to run this project you need:
 
 ```
-sudo apt install ruby
-gem install json
-gem install rspec
+  sudo apt install ruby
+  gem install json
+  gem install rspec
 ```
 
 ### Setup
