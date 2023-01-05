@@ -22,5 +22,9 @@ describe Person do
     it '#add_rental' do
       expect(person.add_rental('book', 'date')).to be_an_instance_of(Rental)
     end
+
+    it '#correct_name' do
+      expect(person.correct_name).to eq('John')
+    end
   end
 end
