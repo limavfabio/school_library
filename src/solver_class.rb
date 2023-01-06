@@ -6,4 +6,11 @@ class Solver
       num * factorial(num - 1)
     end
   end
+
+  def reverse(str)
+    str.split('').reverse.join
+  end
+
+  def fizzbuzz(num)
+  end
 end
