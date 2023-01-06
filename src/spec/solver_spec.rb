@@ -27,8 +27,20 @@ describe Solver do
   end
 
   context '#fizzbuzz' do
-    it 'returns "1 2 fizz 4 buzz fizz 7 8 fizz buzz 11 fizz 13 14 fizzbuzz" for the first 15 numbers' do
-      expect(@solver.fizzbuzz(15)).to eq '1 2 fizz 4 buzz fizz 7 8 fizz buzz 11 fizz 13 14 fizzbuzz'
+    it 'returns "fizz" for input 3' do
+      expect(@solver.fizzbuzz(3)).to eq 'fizz'
+    end
+
+    it 'returns "buzz" for input 5' do
+      expect(@solver.fizzbuzz(5)).to eq 'buzz'
+    end
+
+    it 'returns "fizzbuzz" for input 15' do
+      expect(@solver.fizzbuzz(15)).to eq 'fizzbuzz'
+    end
+
+    it 'returns "7" for input 7' do
+      expect(@solver.fizzbuzz(7)).to eq '7'
     end
   end
 end
