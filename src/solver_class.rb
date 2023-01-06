@@ -1,5 +1,7 @@
 class Solver
   def factorial(num)
+    raise ArgumentError.new('Expected a positive value') if num.negative?
+
     if num <= 1
       1
     else
