@@ -10,6 +10,14 @@ describe Solver do
     it 'returns 720 for input 6' do
       expect(@solver.factorial(6)).to eq 720
     end
+
+    it 'returns 1 for input 0' do
+      expect(@solver.factorial(0)).to eq 1
+    end
+
+    it 'returns and exception for input -1' do
+      expect { @solver.factorial(-1) }.to raise_error(ArgumentError)
+    end
   end
 
   context '#reverse' do
