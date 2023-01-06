@@ -1,6 +1,6 @@
 class Solver
   def factorial(num)
-    raise ArgumentError.new('Expected a positive value') if num.negative?
+    raise ArgumentError, 'Expected a positive value' if num.negative?
 
     if num <= 1
       1
@@ -14,17 +14,14 @@ class Solver
   end
 
   def fizzbuzz(num)
-    res = (1..num).map do |n|
-      if (n % 15).zero?
-        'fizzbuzz'
-      elsif (n % 3).zero?
-        'fizz'
-      elsif (n % 5).zero?
-        'buzz'
-      else
-        n
-      end
+    if (num % 15).zero?
+      'fizzbuzz'
+    elsif (num % 3).zero?
+      'fizz'
+    elsif (num % 5).zero?
+      'buzz'
+    else
+      num.to_s
     end
-    res.join(' ')
   end
 end
