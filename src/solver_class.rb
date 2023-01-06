@@ -1,11 +1,9 @@
 class Solver
-  def factorial(n)
-    if n < 0
-      raise 'Factorial is defined only for non-negative integers'
-    elsif n == 0
+  def factorial(num)
+    if num <= 1
       1
     else
-      (1..n).inject(:*)
+      num * factorial(num - 1)
     end
   end
 end
