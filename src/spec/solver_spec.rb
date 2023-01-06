@@ -2,7 +2,9 @@ require 'rspec'
 require_relative '../solver_class'
 
 describe Solver do
-  let(:solver) { Solver.new }
+  before(:each) do
+    @solver = Solver.new
+  end
 
   context '#factorial' do
     it 'returns 720 for input 6' do
