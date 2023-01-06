@@ -1,7 +1,7 @@
 require 'rspec'
 require_relative '../solver_class'
 
-describe Student do
+describe Solver do
   let(:solver) { Solver.new }
 
   context '#factorial' do
